@@ -12,3 +12,11 @@ class Task(db.Model):
         self.user_email = request_data['user_email']
         self.text = request_data['text']
         self.done = False
+
+    @property
+    def serialize(self):
+       return {
+           'id': self.id,
+           'text': self.text,
+           'done'  : self.done
+       }
