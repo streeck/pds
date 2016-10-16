@@ -8,4 +8,4 @@ class Users(Resource):
         user = User(request.json)
         db.session.add(user)
         db.session.commit()
-        return {'hello': 'test'}
+        return user.serialize
