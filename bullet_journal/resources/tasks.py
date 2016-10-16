@@ -18,7 +18,7 @@ class Tasks(Resource):
 class SingleTask(Resource):
     def patch(self, user_email, task_id):
         task = Task.query.get_or_404(task_id)
-        task.done = True
+        task.done = not task.done
         db.session.add(task)
         db.session.commit()
         return task.serialize
