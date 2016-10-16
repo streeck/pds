@@ -22,3 +22,9 @@ class SingleTask(Resource):
         db.session.add(task)
         db.session.commit()
         return task.serialize
+
+    def delete(self, user_email, task_id):
+        task = Task.query.get_or_404(task_id)
+        db.session.delete(task)
+        db.session.commit()
+        return {}, 200
