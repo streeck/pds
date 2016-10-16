@@ -4,7 +4,7 @@ from flask_restful import Api
 from . import db
 from flask_cors import CORS
 from datetime import datetime
-from .resources import Users, Tasks
+from .resources import Users, Tasks, SingleTask
 
 
 def create_app():
@@ -29,5 +29,6 @@ def create_app():
     api.add_resource(Users, '/users/', endpoint='users')
 
     api.add_resource(Tasks, '/users/<string:user_email>/tasks/', endpoint='tasks')
+    api.add_resource(SingleTask, '/users/<string:user_email>/tasks/<int:task_id>', endpoint='task')
 
     return app
