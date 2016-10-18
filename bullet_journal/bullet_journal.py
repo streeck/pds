@@ -13,8 +13,8 @@ def create_app():
     api = Api(app)
     db.init_app(app)
 
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://uwrhjjryckxmna:_IpSDyE7t4_qRE_3girJixibCP@ec2-54-235-68-4.compute-1.amazonaws.com:5432/d4v8pka5tur8fs'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/bullet_journal'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://uwrhjjryckxmna:_IpSDyE7t4_qRE_3girJixibCP@ec2-54-235-68-4.compute-1.amazonaws.com:5432/d4v8pka5tur8fs'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/bullet_journal'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['TIMESTAMP_FORMAT'] = '%Y-%m-%d %H:%M:%S'
 

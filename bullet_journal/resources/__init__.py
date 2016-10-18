@@ -1,2 +1,2 @@
 from .users import Users
-from .tasks import Tasks
+from .tasks import SingleTask, Tasks
